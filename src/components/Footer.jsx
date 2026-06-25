@@ -21,15 +21,6 @@ const socials = [
     ),
   },
   {
-    label: 'TikTok',
-    href: 'https://tiktok.com',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.23 6.23 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.07 8.07 0 004.74 1.53V6.78a4.85 4.85 0 01-.97-.09z"/>
-      </svg>
-    ),
-  },
-  {
     label: 'LinkedIn',
     href: 'https://linkedin.com',
     icon: (
@@ -150,11 +141,6 @@ export default function Footer() {
             <p className="text-xs text-white/20">
               © {new Date().getFullYear()} GULPY. Made with 💧 for better health.
             </p>
-            <div className="flex gap-5">
-              {['Privacy Policy', 'Terms of Service'].map((l) => (
-                <span key={l} className="text-xs text-white/20 cursor-default">{l}</span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

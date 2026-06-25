@@ -233,7 +233,6 @@ export default function Hero() {
             {/* Stat chips */}
             <motion.div {...fadeUp(0.52)} className="flex flex-wrap gap-3 justify-center lg:justify-start">
               {[
-                { val: '2,400+', label: 'People waiting' },
                 { val: '100%', label: 'Free to start' },
                 { val: 'iOS & Android', label: 'Coming soon' },
               ].map((s) => (
