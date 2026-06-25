@@ -2,6 +2,13 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import Droplets from '../Droplets';
+import {
+  doc,
+  setDoc,
+  serverTimestamp
+} from "firebase/firestore";
+
+import { db } from "../firebase/firebaseConfig";
 
 function ConfettiDrop({ emoji, style }) {
   return (
@@ -56,11 +63,14 @@ export default function Waitlist() {
     await new Promise((r) => setTimeout(r, 900)); // Simulate network
 
     // Save to localStorage
-    try {
-      const existing = JSON.parse(localStorage.getItem('gulpy_waitlist') || '[]');
-      existing.push({ name: name.trim(), email: email.trim().toLowerCase(), joinedAt: new Date().toISOString() });
-      localStorage.setItem('gulpy_waitlist', JSON.stringify(existing));
-    } catch {}
+await setDoc(
+  doc(db, "waitlist", email.toLowerCase()),
+  {
+    name,
+    email: email.toLowerCase(),
+    joinedAt: serverTimestamp(),
+  }
+);
 
     setLoading(false);
     setSubmitted(true);
