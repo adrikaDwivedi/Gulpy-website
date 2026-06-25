@@ -210,11 +210,10 @@ export default function Waitlist() {
                         setEmail(e.target.value);
                         setErrors((p) => ({ ...p, email: "" }));
                       }}
-                      className="input-field"
+                      className="input-field w-full rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-4 py-3 text-white placeholder-white/50 outline-none transition-all duration-300 focus:border-cyan-300 focus:bg-white/20 focus:ring-2 focus:ring-cyan-400/40"
                       autoComplete="email"
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? "email-err" : undefined}
-                       className="w-full rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-4 py-3 text-white placeholder-white/50 outline-none transition-all duration-300 focus:border-cyan-300 focus:bg-white/20 focus:ring-2 focus:ring-cyan-400/40"
                     />
                     <AnimatePresence>
                       {errors.email && (
